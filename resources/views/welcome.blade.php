@@ -1,95 +1,63 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="En">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <title>Ulasan Kelas</title>
+        
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
+          
+            .content{
+                margin-top:200px;
+                font-size:20px;
             }
-
-            .full-height {
-                height: 100vh;
+            .title{
+                font-size:70px;
+                color:#fff;
             }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
+            .subtitle{
+                font-size:25px;
+                color:#fff;
             }
-
-            .position-ref {
-                position: relative;
+            .navbar-brand{
+                padding-left:15px;
+                font-family:bold;
             }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
+            .navbar-nav{
+                color:#fff;
+                padding-right:20px;
             }
-
-            .content {
-                text-align: center;
+            body{
+                background-image:url("./image/ulsan kelas image.jpg");
+                background-position: 50% 50%;               
+                background-repeat:no-repeat;
             }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
+            
         </style>
     </head>
+    <header class="mb-4">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark"> 
+        <a class="navbar-brand" href="/">Ulasan Kelas</a>
+         <ul class="navbar-nav mr-auto"></ul>
+            <div class="nav-item">{!! link_to_route('login', 'Login', [], ['class' => 'nav-link']) !!}</div>
+        
+    </nav>
+</header>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+        <div class="text-center content">
+                <div class="title ">
+                     <p>Ulasan Kelas<p>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="subtitle">
+                    <p>Share the course review<br>for UM students</p>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+                {!! link_to_route('signup.get', 'Sign up', [], ['class' => 'btn btn-lg btn-primary']) !!}
         </div>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     </body>
 </html>
